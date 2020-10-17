@@ -1,0 +1,79 @@
+#+TITLE: Algoritmo genético
+#+SUBTITLE: Trabalho Prático 2 
+#+AUTHOR: Heitor Lourenço Werneck
+#+EMAIL: heitorwerneck@hotmail.com
+#+LANGUAGE: pt
+#+OPTIONS: ^:nil email:nil author:nil \n:t
+#+LATEX_HEADER: \author{Heitor Lourenço Werneck \\{\href{mailto:heitorwerneck@hotmail.com}{heitorwerneck@hotmail.com}}}
+#+LATEX_HEADER: \usepackage[AUTO]{babel}
+# mathtools ja inclui amsmath #+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage[binary-units=true]{siunitx}
+#+LATEX_HEADER: \usepackage[top=0.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+
+#+LATEX_HEADER: \usepackage{mdframed}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage[noend]{algpseudocode}
+#+LATEX_HEADER: \usepackage{algorithm}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{graphicx,wrapfig,lipsum}
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+#+LATEX_HEADER: \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+#+LATEX_HEADER: \usepackage[subrefformat=parens]{subcaption}
+#+latex_class_options: [11pt]
+
+#+PROPERTY: header-args :eval no-export
+#+BEGIN_EXPORT latex
+\usetikzlibrary{arrows, fit, matrix, positioning, shapes, backgrounds,intersections}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{automata, positioning, arrows}
+\usetikzlibrary{calc}
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\BeforeBeginEnvironment{minted}{\begin{mdframed}[backgroundcolor=bg]}
+\AfterEndEnvironment{minted}{\end{mdframed}}
+\numberwithin{equation}{section}
+\algnewcommand{\IfThenElse}[3]{% \IfThenElse{<if>}{<then>}{<else>}
+  \State \algorithmicif\ #1\ \algorithmicthen\ #2\ \algorithmicelse\ #3}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [ellipse, draw, fill=red!20, 
+    text width=5em, text centered, rounded corners, minimum height=2em]
+%\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3.5cm,
+%    minimum height=2em]
+
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+#+END_EXPORT
+
+* Solução
+
+A construção do algoritmo genetico 
+
+Foi escolhido minimizar a função objetivo.
+
+O intervalo de busca de valores foi dentro do dominio $[-2,2]$  dado que o dominio fechado facilita a busca do melhor valor para a função objetivo.
+
+
+
+
+
+* Análise de resultados
+
+

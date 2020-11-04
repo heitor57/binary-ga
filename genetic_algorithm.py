@@ -146,8 +146,8 @@ class Individual:
         new_genome = self.string_to_genome_list(new_genome)
         new_ind1 = Individual(new_genome)
 
-        new_genome = flat_genome_2[idx+1:]
-        new_genome += flat_genome_1[:idx+1]
+        new_genome = flat_genome_2[:idx+1]
+        new_genome += flat_genome_1[idx+1:]
         new_genome = self.string_to_genome_list(new_genome)
         new_ind2 = Individual(new_genome)
         return new_ind1, new_ind2
